@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: Workflow-management-backend
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/android
+    username: root
+    password: lam2002
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+    
+    
+     
+   
