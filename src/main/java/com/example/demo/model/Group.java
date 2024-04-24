@@ -34,12 +34,12 @@ public class Group {
 	
 	private String passWordGroup;
 	
-	@JsonIgnore
+	private String passZoom;
+	
 	@ManyToOne
 	@JoinColumn(name = "host_id")
 	private User hostGroup;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy = "group")
 	private List<GroupMember> listMembers;
 	

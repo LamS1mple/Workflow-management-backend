@@ -43,6 +43,7 @@ public class User{
 	@JsonIgnore
 	@OneToMany(mappedBy = "hostGroup")
 	private List<Group> listGroupHost;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<TaskMember> listTaskMembers;

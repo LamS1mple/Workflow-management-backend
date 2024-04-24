@@ -3,6 +3,7 @@ package com.example.demo.model;
 import java.util.Date;
 import java.util.List;
 
+import com.example.demo.dto.response.ApiResponse;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -12,6 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -35,7 +37,8 @@ public class TaskMember {
 	
 	private boolean isFinish;
 	
-	
+    private String contentTask;
+
 	
 	@ManyToOne
 	@JoinColumn(name = "task_id")
@@ -46,11 +49,15 @@ public class TaskMember {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy = "taskMember")
 	private List<DetailTaskMember> listDetalDetailTaskMember;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "taskMember")
 	private List<Media> listMedia;
+
+	@JsonIgnore
+	@OneToOne(mappedBy = "taskMember")
+	private NoticeTask notice;
+
 }

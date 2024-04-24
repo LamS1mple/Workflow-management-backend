@@ -31,7 +31,6 @@ public class GroupMember {
 	
 	private Date dateJoin;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;

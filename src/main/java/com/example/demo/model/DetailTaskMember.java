@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -23,9 +24,9 @@ import lombok.NoArgsConstructor;
 public class DetailTaskMember {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue()
 	private long id;
-	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date dateFinish;
 	
 	private String titleTask;
